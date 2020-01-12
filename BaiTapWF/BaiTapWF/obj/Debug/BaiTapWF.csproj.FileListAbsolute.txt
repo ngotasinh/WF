@@ -1,0 +1,10 @@
+D:\WPF_MOI\WF\BaiTapWF\BaiTapWF\bin\Debug\BaiTapWF.exe.config
+D:\WPF_MOI\WF\BaiTapWF\BaiTapWF\bin\Debug\BaiTapWF.exe
+D:\WPF_MOI\WF\BaiTapWF\BaiTapWF\bin\Debug\BaiTapWF.pdb
+D:\WPF_MOI\WF\BaiTapWF\BaiTapWF\obj\Debug\BaiTapWF.csprojAssemblyReference.cache
+D:\WPF_MOI\WF\BaiTapWF\BaiTapWF\obj\Debug\BaiTapWF.Employee.resources
+D:\WPF_MOI\WF\BaiTapWF\BaiTapWF\obj\Debug\BaiTapWF.Properties.Resources.resources
+D:\WPF_MOI\WF\BaiTapWF\BaiTapWF\obj\Debug\BaiTapWF.csproj.GenerateResource.cache
+D:\WPF_MOI\WF\BaiTapWF\BaiTapWF\obj\Debug\BaiTapWF.csproj.CoreCompileInputs.cache
+D:\WPF_MOI\WF\BaiTapWF\BaiTapWF\obj\Debug\BaiTapWF.exe
+D:\WPF_MOI\WF\BaiTapWF\BaiTapWF\obj\Debug\BaiTapWF.pdb
