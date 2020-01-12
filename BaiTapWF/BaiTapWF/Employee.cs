@@ -17,6 +17,11 @@ namespace BaiTapWF
         #region Các biến private
 
         /// <summary>
+        /// numericalOrder: biến số thứ tự datagridview
+        /// </summary>
+        private int numericalOrder =1;
+
+        /// <summary>
         /// Khởi tạo biến lấy vị trí của row đã click vào
         /// </summary>
         private int indexRow;
@@ -204,13 +209,33 @@ namespace BaiTapWF
             //Xác nhận xóa
             if (MessageBox.Show("Bạn có muốn xóa không?", "Remove Row", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                // Xóa dữ liệu dòng đã chọn
                 dataGridViewEmployee.Rows.RemoveAt(indexRow);
+
+                // Gọi hàm EnableControl khóa các control
+                EnabledControl(false);
+
+                // Gọi hàm trạng thái mặc định các nút button
+                EnableButtonDefault();
+
+                // Gọi hàm ResetControl reset các control
+                ResetControl();
             }
 
             // cancel xác nhận xóa
             else
             {
-                MessageBox.Show("Dòng vẫn chưa xóa", "Remove Row", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                // Không xóa dòng được chọn
+                MessageBox.Show("Dòng được chọn chưa được xóa", "Remove Row", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // Gọi hàm EnableControl khóa các control
+                EnabledControl(false);
+
+                // Gọi hàm trạng thái mặc định các nút button
+                EnableButtonDefault();
+
+                // Gọi hàm ResetControl reset các control
+                ResetControl();
             }
         }
 
@@ -256,7 +281,7 @@ namespace BaiTapWF
                 }
 
                 // Đổ dữ liệu vào dataTableEmployee
-                this.dataTableEmployee.Rows.Add("1"
+                this.dataTableEmployee.Rows.Add(numericalOrder
                                            , textBoxID.Text
                                            , textBoxName.Text
                                            , dateTimePickerBirth.Text
@@ -268,6 +293,9 @@ namespace BaiTapWF
 
                 // Gọi hàm Add row dataGridViewEmployee
                 AddRowDataGridView();
+
+                // Tăng số thứ tự lên một đơn vị
+                numericalOrder++;
             }
 
             // Update thông tin nhân viên
@@ -315,7 +343,7 @@ namespace BaiTapWF
             this.dataGridViewEmployee.AllowUserToAddRows = false;
 
             // Add colums cho dataTable
-            dataTableEmployee.Columns.Add("STT", typeof(string));
+            dataTableEmployee.Columns.Add("STT", typeof(int));
             dataTableEmployee.Columns.Add("ID", typeof(string));
             dataTableEmployee.Columns.Add("HoTen", typeof(string));
             dataTableEmployee.Columns.Add("NgaySinh", typeof(string));
